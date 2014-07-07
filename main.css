@@ -1,0 +1,64 @@
+#container {
+  width:750px;
+  margin: 0px auto;
+  position:relative;
+}
+
+#painokeys {
+  
+
+}
+
+
+.bigkey   {
+  width:50px;
+  border:1px solid black;
+  display:inline-block;
+  text-align:center;
+  padding-top:200px;
+}
+
+.smallkey  {
+  width:50px;
+  border:1px solid black;
+  display:inline-block;
+  margin-bottom:99px;
+  background-color:black;
+  color:#ffffff;
+  text-align:center;
+  padding-top:100px;
+  position: absolute;
+  z-index:1;
+}
+
+#cs {
+  left: 25px;
+}
+
+#ds {
+  left: 85px;
+}
+
+#fs {
+  left: 195px;
+}
+
+#gs {
+  left: 253px;
+}
+
+#as {
+  left: 310px;
+}
+
+.highlight {
+  background-color:yellow;
+}
+
+#second {
+  margin-top:50px;
+}
+
+#third {
+  margin-top:50px;
+}

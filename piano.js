@@ -1,66 +1,85 @@
-var order = [];
+// version 2 - module pattern
 
-$('#pianokeys').on("mousedown", "div", function(){
-  $(this).addClass('highlight');
-  addKey($(this).text())
-});
+var Piano = (function(){
+  var order = [];
+  
+  // cache common selectors
+  var s = {
+    pianoKeys: $('#pianokeys'),
+    clearButton: $('#clear'),
+    replayButton: $('#replay'),
+    displayOrder : $('#displayOrder')
+  };
+  
+  var me = {};
 
-$('#pianokeys').on("mouseup", "div", function(){
-  $(this).removeClass('highlight');
-});
-
-$('#clear').on("click", function(){
-  clearOrder();
-});
-
-$('#replay').on("click", function(){
-  replayOrder();
-});
-
-function addKey(id) {
-  order.push(id);
-  var current = $('#displayOrder').html();
-  if (current.length > 0) {
-    current += " ";
-    $('#displayOrder').html(current + id);
+  me.init = function() {
+    setUpBindings();
   }
-  else {
-    $('#displayOrder').html(id);
+  
+  function setUpBindings() {
+    s.clearButton.on('click',function(){
+      clearOrder();
+    })
+    s.replayButton.on('click',function(){
+      replayOrder();
+    })
+    s.pianoKeys.on('click','div',function(){
+      keyOnOff(this.id);
+      addKey(this.id);
+    })
   }
-}
+  
+  function keyOnOff(el) {
+    var test = $("#"+el);
+    
+    if (test) {
+      test.addClass('highlight');
+      setTimeout(function() { 
+        test.removeClass('highlight');
+      },500);
+    }
+  }
 
-function clearOrder() {
-  order = [];
-  $('div').removeClass("highlight");
-  $('#displayOrder').html("");
-}
+  function addKey(id) {
+    order.push(id);
+    var currentText = s.displayOrder.html();
+    if (currentText.length > 0) {
+      currentText += " ";
+      s.displayOrder.html(currentText + id);
+    }
+    else {
+      s.displayOrder.html(id);
+    }
+  }
 
-function removeKey() {
-  var current = $('#displayOrder').html();
-  if (current.length > 0) {
-    current = current.split(" ");
-    current.splice(0,1);
-    $('#displayOrder').html(current.join(" "));
+  function removeKey() {
+    var currentText = s.displayOrder.html();
+    if (currentText.length > 0) {
+      currentText = currentText.split(" ");
+      currentText.splice(0,1);
+      s.displayOrder.html(currentText.join(" "));
+    }
+    return order.splice(0,1);
   }
-  return order.splice(0,1);
-}
 
-function replayOrder() {
-  if (order.length > 0) {
-    var iter = removeKey(); 
-    keyOnOff(iter);
+  function replayOrder() {
+    if (order.length > 0) {
+      var iter = removeKey(); 
+      keyOnOff(iter);
+    }
+    else {
+      alert("No keys in queue.")
+    }
   }
-  else {
-    alert("No keys in queue.")
+  
+  function clearOrder() {
+    order = [];
+    s.displayOrder.html("");
+    alert("Order cleared.")
   }
-}
+  
+  return me;
+}());
 
-function keyOnOff(el) {
-  var test = $("#"+el);
-  if (test) {
-    test.addClass('highlight');
-    setTimeout(function() { 
-      test.removeClass('highlight');
-      },1000);
-  }
-}
+Piano.init();

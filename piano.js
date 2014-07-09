@@ -67,6 +67,9 @@ var Piano = (function(){
     if (order.length > 0) {
       var iter = removeKey(); 
       keyOnOff(iter);
+      setTimeout(function() { 
+        replayOrder();
+      },1000);
     }
     else {
       alert("No keys in queue.")

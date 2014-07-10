@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head lang='en'>
   <title>Sample HTML5 Webpage</title>
+  <meta charset="utf-8"/>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
@@ -10,22 +11,21 @@
 
   <div id="container">
   <p>My Piano</p>
-  <div id="pianokeys">
-
-    <div id="c" class="bigkey">c</div>
-    <div id="cs" class="smallkey">cs</div>
-    <div id="d" class="bigkey">d</div>
-    <div id="ds" class="smallkey">ds</div>
-    <div id="e" class="bigkey">e</div>  
-    <div id="f" class="bigkey">f</div>
-    <div id="fs" class="smallkey">fs</div>
-    <div id="g" class="bigkey">g</div>
-    <div id="gs" class="smallkey">gs</div>
-    <div id="a" class="bigkey">a</div>
-    <div id="as" class="smallkey">as</div>
-    <div id="b" class="bigkey">b</div>  
-
-  </div>
+  
+  <ul id="pianokeys">
+    <li id="c" class="bigkey">c</li>
+    <li id="cs" class="smallkey">cs</li>
+    <li id="d" class="bigkey">d</li>
+    <li id="ds" class="smallkey">ds</li>
+    <li id="e" class="bigkey">e</li>  
+    <li id="f" class="bigkey">f</li>
+    <li id="fs" class="smallkey">fs</li>
+    <li id="g" class="bigkey">g</li>
+    <li id="gs" class="smallkey">gs</li>
+    <li id="a" class="bigkey">a</li>
+    <li id="as" class="smallkey">as</li>
+    <li id="b" class="bigkey">b</li>   
+  </ul>
   <!-- close piano -->
   
   <div id="second">
@@ -35,7 +35,7 @@
     </div>
   </div>  
 
-  <div id="third"><p>Order: </p>
+  <div id="third"><p>Recorded Order: </p>
     <div id="displayOrder"></div>
   </div>
   

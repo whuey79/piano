@@ -1,31 +1,78 @@
+/* css reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* end css reset */
+
 #container {
   width:750px;
-  margin: 0px auto;
+  margin: 20px auto;
   position:relative;
 }
 
-#painokeys {
-  
-
+ul {
+  margin-top:25px;
 }
 
+li {
+  display:inline-block;
+  list-style-type: none;
+  text-align:center;
+  border:1px solid black;
+}
 
 .bigkey   {
   width:50px;
-  border:1px solid black;
-  display:inline-block;
-  text-align:center;
   padding-top:200px;
 }
 
 .smallkey  {
   width:50px;
-  border:1px solid black;
-  display:inline-block;
   margin-bottom:99px;
   background-color:black;
   color:#ffffff;
-  text-align:center;
   padding-top:100px;
   position: absolute;
   z-index:1;
@@ -55,10 +102,7 @@
   background-color:yellow;
 }
 
-#second {
+#second, #third {
   margin-top:50px;
 }
 
-#third {
-  margin-top:50px;
-}

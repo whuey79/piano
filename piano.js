@@ -24,7 +24,7 @@ var Piano = (function(){
     s.replayButton.on('click',function(){
       replayOrder();
     })
-    s.pianoKeys.on('click','div',function(){
+    s.pianoKeys.on('click','li',function(){
       keyOnOff(this.id);
       addKey(this.id);
     })

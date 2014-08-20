@@ -1,6 +1,6 @@
 piano
 =====
-Piano built with HTML/CSS/Javascript/jQuery
+Piano built with HTML/CSS/Javascript/jQuery<br>
 Demo:  http://willhuey.biz/demos/piano/
 
 Current features: 

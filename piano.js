@@ -2,13 +2,16 @@
 
 var Piano = (function(){
   var order = [];
+  var demo = ['c','c','c','c','b','a','b','c','d','e','e','e','e','d','c','d','e','f','g','c'];
   
   // cache common selectors
   var s = {
     pianoKeys: $('#pianokeys'),
     clearButton: $('#clear'),
     replayButton: $('#replay'),
-    displayOrder : $('#displayOrder')
+    demoButton:$('#demo'),
+    displayOrder : $('#displayOrder'),
+    note : $('audio')
   };
   
   var me = {};
@@ -20,18 +23,29 @@ var Piano = (function(){
   function setUpBindings() {
     s.clearButton.on('click',function(){
       clearOrder();
-    })
+    });
     s.replayButton.on('click',function(){
       replayOrder();
-    })
+    });
+    s.demoButton.on('click',function() {
+      clearOrder();
+      for (var i=0; i< demo.length; i++) {
+        addKey(demo[i]);
+      }
+    });
     s.pianoKeys.on('click','li',function(){
       keyOnOff(this.id);
       addKey(this.id);
-    })
+    });
   }
   
   function keyOnOff(el) {
     var test = $("#"+el);
+    
+    //alert(typeof el + " " +el)
+
+    s.note.siblings("#p"+el)[0].currentTime=0;
+    s.note.siblings("#p"+el)[0].play();   
     
     if (test) {
       test.addClass('highlight');
@@ -69,7 +83,7 @@ var Piano = (function(){
       keyOnOff(iter);
       setTimeout(function() { 
         replayOrder();
-      },1000);
+      },600);
     }
     else {
       alert("No keys in queue.")

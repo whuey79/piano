@@ -10,38 +10,99 @@
 
 
   <div id="container">
-  <p>My Piano</p>
+  <h1>My Piano</h1>
   
   <ul id="pianokeys">
-    <li id="c" class="bigkey">c</li>
-    <li id="cs" class="smallkey">cs</li>
-    <li id="d" class="bigkey">d</li>
-    <li id="ds" class="smallkey">ds</li>
-    <li id="e" class="bigkey">e</li>  
-    <li id="f" class="bigkey">f</li>
-    <li id="fs" class="smallkey">fs</li>
-    <li id="g" class="bigkey">g</li>
-    <li id="gs" class="smallkey">gs</li>
-    <li id="a" class="bigkey">a</li>
-    <li id="as" class="smallkey">as</li>
-    <li id="b" class="bigkey">b</li>   
+    <li id="c" class="bigkey shadow">C</li>
+    <li id="cs" class="smallkey">C#</li>
+    <li id="d" class="bigkey">D</li>
+    <li id="ds" class="smallkey">D#</li>
+    <li id="e" class="bigkey">E</li>  
+    <li id="f" class="bigkey">F</li>
+    <li id="fs" class="smallkey">F#</li>
+    <li id="g" class="bigkey">G</li>
+    <li id="gs" class="smallkey">G#</li>
+    <li id="a" class="bigkey">A</li>
+    <li id="as" class="smallkey">A#</li>
+    <li id="b" class="bigkey">B</li>   
   </ul>
   <!-- close piano -->
   
   <div id="second">
     <div id="controls">
       <button type="button" id="clear">Clear</button>
-      <button type="button" id="replay">Replay</button>
+      <button type="button" id="replay">Replay (fixed)</button>
+      <button type="button" id="demo">Demo</button>
     </div>
   </div>  
 
   <div id="third"><p>Recorded Order: </p>
     <div id="displayOrder"></div>
   </div>
-  
+    
   </div>
   <!-- close container -->
 
+<audio id='pc' controls>
+  <source src="/sounds/c.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+<audio id='pd' controls>
+  <source src="/sounds/d.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+<audio id='pe' controls>
+  <source src="/sounds/e.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+<audio id='pf' controls>
+  <source src="/sounds/f.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+<audio id='pg' controls>
+  <source src="/sounds/g.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+<audio id='pa' controls>
+  <source src="/sounds/a.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+<audio id='pb' controls>
+  <source src="/sounds/b.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+<audio id='pcs' controls>
+  <source src="/sounds/cs.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+<audio id='pds' controls>
+  <source src="/sounds/ds.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+<audio id='pfs' controls>
+  <source src="/sounds/fs.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+<audio id='pgs' controls>
+  <source src="/sounds/gs.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+<audio id='pas' controls>
+  <source src="/sounds/as.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+  
   <script type="text/javascript" src="piano.js"></script>
 
 </body>

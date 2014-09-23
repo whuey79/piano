@@ -67,11 +67,11 @@ li {
   width:50px;
   padding-top:200px;
   border-radius: 3px 3px 4px 4px;
+  box-shadow:  -2px 2px 0px 0px lightgray;
 }
 
 .smallkey  {
   width:30px;
-
   margin-bottom:90px;
   background-color:black;
   color:#ffffff;
@@ -79,6 +79,7 @@ li {
   position: absolute;
   z-index:1;
   border-radius: 3px 3px 4px 4px;
+  box-shadow:  -2px 2px 0px 0px lightgray;
 }
 
 #cs {
